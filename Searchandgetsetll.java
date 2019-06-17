@@ -10,34 +10,41 @@ import java.util.*;
 import java.io.*;
 public class Main
 {
-    void sort(int a[]){
-        int len = a.length;
-        for(int i=1;i<len;i++)
-        {
-        int key = a[i];
-        int j= i-1;
-        while(j>=0&&a[j]>key){
-            a[j+1]=a[j];
-            j=j-1;
-        }
-        a[j+1]=key;
-    }
-    }
+    
 	public static void main(String[] args) {
 	        Scanner scan = new Scanner(System.in);
-	        Main ob = new Main();
-	        int n = scan.nextInt();
-	        int a[]=new int[n];
-	        for(int i=0;i<n;i++)
-	        {
-	            a[i]=scan.nextInt();
+	        LinkedList<String> object = new LinkedList<String>();
+	        object.add("1");
+	        object.add("2");
+	        object.add("3");
+	        object.addFirst("4");
+	        object.addLast("6");
+	        object.add("5");
+	        object.add("7");
+	        //find the element in the linked list
+	        boolean result = object.contains("6");
+	        if(result){
+	            System.out.println("Element 6 found");
 	        }
-	        ob.sort(a);
-	        System.out.println("sorted array:");
-	        for(int i=0;i<n;i++)
-	        {
-	            System.out.println(a[i]+" ");
+	        else{
+	            System.out.println("Element 6 not found");
 	        }
-	      
+	        
+	        object.remove();
+	        object.remove();
+	        
+	        
+	        //size of linked list
+	        int size = object.size();
+	        System.out.println("size of linked list:"+size);
+	        
+	        //get and set element in linked list
+	        Object element=object.get(4);
+	        System.out.println("element is "+element);
+	        object.set(1,"8");
+	        object.set(2,"10");
+	        System.out.println("Linked list after change: "+object);
+	        
+	        
 	}
 }
